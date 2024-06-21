@@ -26,14 +26,14 @@ candidateName = input.question("\n What is your Name?\n");
 function askQuestion() {
   // TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer //
 
-  question = input.question("\n Who was the first American woman in space? \n\t");
+  candidateAnswer = input.question("\n Who was the first American woman in space? \n\t");
 
 }
 
 function gradeQuiz(candidateAnswers) {
 
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
-if (candidateAnswer==correctAnswer) {
+if (correctAnswer===candidateAnswer) {
   console.log("Correct");
 }
 else {
