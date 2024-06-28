@@ -41,28 +41,37 @@ function askQuestion() {
   console.log(candidateAnswers);
 }
 console.log("..............................................");
-function gradeQuiz() {
+
+function gradeQuiz(candidateAnswers) {
 
 let correctAnswerCount = 0;
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
 
-for(let i=0; i < correctAnswers.length; i++){
+  let grade;  //TODO 3.2 use this variable to calculate the candidates score.]
+
+
+  console.log("..............................................");
+
+  
+  for(let i=0; i < correctAnswers.length; i++){
     if( correctAnswers[i].toLowerCase() === candidateAnswers[i].toLowerCase()){
       console.log(`Question ${i+1} = Your answer is ${candidateAnswers[i]} and the correct answer is ${correctAnswers[i]} = Pass`);
       correctAnswerCount ++;
     }else {
       console.log(`Question ${i+1} = Your answer is ${candidateAnswers[i]} and the correct answer is ${correctAnswers[i]} = Fail`);
       console.log("Great job Try again");
-
+    }
   }
-  console.log("..............................................");
-}
+  let noOfQuestions = questions.length;
+  grade = (correctAnswerCount/noOfQuestions)*100;
+  console.log(`Grade ${grade}`);
+  if(grade < 80){
+      console.log(`You grade is ${grade} so failed`)
+  }else {
+    console.log(`you score is ${grade} and passed`);
+  }
 
-  let grade;  //TODO 3.2 use this variable to calculate the candidates score.]
-
- 
   return grade;
-
 }
 
 function runProgram() {
@@ -70,7 +79,7 @@ function runProgram() {
   // TODO 1.1c: Greet candidate using their name //
   console.log( `Hi ${candidateName}  Welcome to this quick questionnaire.\n`);
   askQuestion();
-  gradeQuiz();
+  gradeQuiz(candidateAnswers);
 }
 
 // ----------- Don't write any code or change any code below this line ---------- //
@@ -85,4 +94,3 @@ module.exports = {
   gradeQuiz: gradeQuiz,
   runProgram: runProgram
 };
-
