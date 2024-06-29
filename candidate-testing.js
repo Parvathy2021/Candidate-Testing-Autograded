@@ -38,9 +38,9 @@ function askQuestion() {
    
        
   }
-  console.log(candidateAnswers);
+  
 }
-console.log("..............................................");
+
 
 function gradeQuiz(candidateAnswers) {
 
@@ -50,7 +50,7 @@ let correctAnswerCount = 0;
   let grade;  //TODO 3.2 use this variable to calculate the candidates score.]
 
 
-  console.log("..............................................");
+
 
   
   for(let i=0; i < correctAnswers.length; i++){
@@ -74,12 +74,14 @@ let correctAnswerCount = 0;
   return grade;
 }
 
+
 function runProgram() {
   askForName();
   // TODO 1.1c: Greet candidate using their name //
-  console.log( `Hi ${candidateName}  Welcome to this quick questionnaire.\n`);
+  console.log( `Hello ${candidateName}  Welcome to this quick questionnaire.\n`);
   askQuestion();
   gradeQuiz(candidateAnswers);
+  console.log("..............................................");
 }
 
 // ----------- Don't write any code or change any code below this line ---------- //
